@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Coding Bootcamp Testimonials Slider</title>
+    <link rel="stylesheet" href="./style/main.css" />
+    <style>
+      @font-face {
+        font-family: "Inter";
+        src: url("assets/Inter-Light.ttf");
+        font-weight: 300;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Inter";
+        src: url("assets/Inter-Medium.ttf");
+        font-weight: 500;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Inter";
+        src: url("assets/Inter-Bold.ttf");
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+    <script src="main.js" type="module" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <main>
+        <div class="testimonial-section">
+          <h1>
+            <q id="testimonial">
+              I&#39;ve been interested in coding for a while but never taken the
+              jump, until now. I couldn&#39;t recommend this course enough.
+              I&#39;m now in the job of my dreams and so excited about the
+              future.
+            </q>
+            <img src="./assets/pattern-quotes.svg" alt="pattern-quotes" />
+          </h1>
+          <p>
+            <strong id="name">Tanya Sinclair</strong>
+            <span id="position">UX Engineer</span>
+          </p>
+        </div>
+        <div class="image-person">
+          <img
+            src="./assets/image-tanya.jpg"
+            alt="Tanya Sinclair"
+            id="img-person"
+          />
+          <div class="buttons-slider">
+            <button id="button-prev">
+              <img
+                src="./assets/icon-prev.svg"
+                alt="previous icon"
+                title="return to previous testimony"
+              />
+            </button>
+            <button id="button-next">
+              <img
+                src="./assets/icon-next.svg"
+                alt="next icon"
+                title="return to next testimony"
+              />
+            </button>
+          </div>
+          <img
+            src="./assets/pattern-bg.svg"
+            alt="background pattern"
+            class="bg-pattern"
+          />
+        </div>
+      </main>
+      <footer class="attribution">
+        Challenge by
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          rel="noopener noreferrer"
+          tabindex="0"
+        >
+          Frontend Mentor
+        </a>
+        . Coded by
+        <a
+          href="https://github.com/Ezequiel-skl"
+          target="_blank"
+          rel="noopener noreferrer"
+          tabindex="0"
+          >Eze-sk</a
+        >.
+      </footer>
+    </div>
+    <img
+      src="./assets/pattern-curve.svg"
+      alt="pattern-curve"
+      class="bg-curve"
+    />
+  </body>
+</html>

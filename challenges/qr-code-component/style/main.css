@@ -1,0 +1,60 @@
+@import url("./root.css");
+@import url("../../🔷global-styles/reset.css");
+@import url("../../🔷global-styles/attribution.css");
+
+body {
+  font-size: var(--Font-size);
+  background-color: var(--Light-gray);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "outfit", sans-serif;
+}
+
+main {
+  border: 1rem solid var(--White);
+  border-radius: 20px;
+  width: fit-content;
+  background: var(--White);
+
+  header {
+    img {
+      width: 288px;
+      height: 288px;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+      border-radius: .75rem;
+    }
+  }
+
+  footer {
+    width: 288px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 30ch;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: 1.375rem;
+      margin: 1.5rem 0 .9375rem;
+      color: var(--Dark-blue);
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 1rem;
+      margin: 0;
+      margin-bottom: 1.375rem;
+      color: var(--Grayish-blue);
+      max-width: 25ch;
+    }
+  }
+}

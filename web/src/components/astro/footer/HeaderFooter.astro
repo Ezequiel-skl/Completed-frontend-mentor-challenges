@@ -1,0 +1,109 @@
+<header class="flex items-center justify-between pb-14 pt-10 md:container md:mx-auto">
+	<a href="/">
+		<img src="/svgs/logos/frontend-mentor.svg" alt="Logo" />
+	</a>
+	<ul class="flex items-center gap-[1.5rem]">
+		<li>
+			<a href="https://www.frontendmentor.io/profile/Ezequiel-skl" target="_blank" title="Frontend Mentor Profile">
+				<img 
+					src="/svgs/logos/frontend-mentor-square.svg" 
+					alt="Logo of Frontend Mentor"
+					class="rounded-full border-[1.8px] border-cyan" 
+				/>
+			</a>
+		</li>
+		<li class="relative">
+			<button title="Linkedin Profiles" class="open-ms-tipe">
+				<img src="/svgs/SM/linkedin.svg" alt="Linkedin" />
+			</button>
+			<div class="absolute ms-tip" hidden>
+				<ul class="flex justify-between items-center">
+					<li>
+						<a 
+							href="https://www.linkedin.com/in/ezequiel-smiak-0b666a306/" 
+							target="_blank" 
+							title="eze-sk's Linkedin profile"
+							class="text-[1.1rem] cursor-pointer font-semibold hover:underline"
+							>
+							Eze-sk
+						</a>
+					</li>
+					<li>
+						<a href="https://www.linkedin.com/company/frontend-mentor" target="_blank" title="Frontend Mentor's Linkedin profile">
+							<img 
+								src="/svgs/logos/frontend-mentor-square.svg" 
+								alt="Logo of Frontend Mentor"
+								class="rounded-full border-[1.8px] border-cyan" 
+							/>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<a href="https://github.com/Ezequiel-skl" target="_blank" title="eze-sk GitHub profile">
+				<img src="/svgs/SM/github.svg" alt="Github" />
+			</a>
+		</li>
+	</ul>
+</header>
+
+<style>
+	img {
+		width: auto;
+		height: 1.625rem;
+	}
+
+	li {
+		line-height: 0;
+	}
+
+	.bts-ms:hover + .content-tooMS,
+	.bts-ms:active + .content-tooMS {
+		display: block;
+	}
+
+	.hidden-element {
+		display: none;
+	}
+
+	.ms-tip {
+		width: 8rem;
+		padding: 0.5rem 0.8rem;
+		border-radius: 0.5rem;
+		background-color: var(--bg-web);
+		border: 2px solid var(--border-main);
+		position: absolute;
+		z-index: 55;
+		left: 50%;
+		bottom: 170%;
+		transform: translateX(-50%);
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: -17.3px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 17.3px 10px 0 10px;
+			border-color: #dbe5e6 transparent transparent transparent;
+		}
+	}
+</style>
+
+<script>
+	const msTip = document.querySelector('.ms-tip') as HTMLElement;
+	const openMsTip = document.querySelector('.open-ms-tipe') as HTMLElement;
+
+	openMsTip.addEventListener('click', () => {
+		msTip.hidden = !msTip.hidden;
+	});
+
+	window.addEventListener('click', (e) => {
+		if (openMsTip.contains(e.target as Node) || msTip.contains(e.target as Node)) return;
+		msTip.hidden = true;
+	});
+</script>

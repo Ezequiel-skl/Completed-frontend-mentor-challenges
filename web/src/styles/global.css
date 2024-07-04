@@ -1,0 +1,13 @@
+:root {
+  --bg-web: #FAFAFA;
+  --border-main: #DBE5E6;
+  --dark-gray: #1C2022;
+  --light-gray: #737373;
+  --purple: #3E54A3;
+  --cyan: #6ABECD;
+  --pink: #cf6390;
+  --lime: #aad742;
+  --red: #ed2c49;
+
+  --font-heebo: 'Heebo', sans-serif;
+}

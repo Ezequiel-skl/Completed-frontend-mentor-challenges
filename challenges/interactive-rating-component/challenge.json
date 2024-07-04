@@ -1,0 +1,19 @@
+{
+  "slug": "interactive-rating-component",
+  "title": "Interactive rating component",
+  "description": "Developed an interactive ranking page with HTML, CSS and JavaScript. Practiced user interaction management and dynamic DOM updating.",
+  "difficulty": [
+    "Newbie",
+    1
+  ],
+  "languages": [
+    "HTML",
+    "CSS",
+    "JS"
+  ],
+  "tags": [
+    "HTML&CSS",
+    "JS",
+    "Newbie"
+  ]
+}

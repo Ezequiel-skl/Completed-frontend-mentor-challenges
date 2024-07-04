@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Fylo data storage component</title>
+    <link rel="stylesheet" href="./style/main.css" />
+    <style>
+      @font-face {
+        font-family: "Raleway";
+        src: url("./assets/Raleway-Regular.ttf");
+        font-weight: 300;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Raleway";
+        src: url("./assets/Raleway-Bold.ttf");
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      body {
+        background-image: url("./assets/bg-desktop.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 0 50dvh;
+      }
+      
+      @media (max-width: 768px) {
+        body {
+          background-image: url("../assets/bg-mobile.png");
+          background-position: center center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <main>
+        <section class="section-1">
+          <img src="./assets/logo.svg" alt="Fylo logo" class="logo" />
+          <ul>
+            <li>
+              <a href="#" title="Document">
+                <img src="./assets/icon-document.svg" alt="document icon"
+              /></a>
+            </li>
+            <li>
+              <a href="#" title="Foldres">
+                <img src="./assets/icon-folder.svg" alt="folder icon"
+              /></a>
+            </li>
+            <li>
+              <a href="#" title="upload">
+                <img src="./assets/icon-upload.svg" alt="upload cloud icon"
+              /></a>
+            </li>
+          </ul>
+        </section>
+        <section class="section-2">
+          <h1>You&#39;ve used <strong>815 GB</strong> of your storage</h1>
+          <div class="container-bar">
+            <div class="bar"></div>
+            <div class="speech-up">
+              <h2>185</h2>
+              <small>GB Left</small>
+            </div>
+          </div>
+          <footer>
+            <p>0 GB</p>
+            <p>1000 GB</p>
+          </footer>
+        </section>
+      </main>
+    </div>
+    <footer class="attribution">
+      Challenge by
+      <a
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        rel="noopener noreferrer"
+        tabindex="0"
+      >
+        Frontend Mentor
+      </a>
+      . Coded by
+      <a
+        href="https://github.com/Ezequiel-skl"
+        target="_blank"
+        rel="noopener noreferrer"
+        tabindex="0"
+        >Eze-sk</a
+      >.
+    </footer>
+  </body>
+</html>

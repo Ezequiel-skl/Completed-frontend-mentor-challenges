@@ -1,0 +1,199 @@
+@import url("../../🔷global-styles/reset.css");
+@import url("../../🔷global-styles/attribution.css");
+@import url("./root.css");
+
+body {
+  font-size: var(--font-size, 14px);
+  font-family: var(--font-family, "Raleway", sans-serif);
+  background-color: var(--very-Dark-Blue, #0c122c);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--pale-Blue, #dddbff);
+}
+
+main {
+  display: flex;
+  align-items: end;
+  gap: 1.875rem;
+
+  section {
+    background-color: var(--dark-Blue, #1d2c67);
+    padding: 2.5rem;
+    border-radius: .625rem;
+    height: fit-content;
+  }
+
+  .section-1 {
+    padding-right: 8.4375rem;
+    border-radius: .625rem 6.25rem .625rem .625rem;
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2.0625rem;
+
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 0.625rem;
+        background-color: var(--very-Dark-Blue, #0c122c);
+      }
+    }
+  }
+
+  .section-2 {
+    position: relative;
+
+    h1 {
+      font-weight: 400;
+      letter-spacing: 0.015em;
+      color: var(--pale-Blue, hsl(243, 100%, 93%));
+
+      strong {
+        font-weight: 700;
+      }
+    }
+
+    .container-bar {
+      border-radius: 99999px;
+      border: 3px solid var(--very-Dark-Blue, #0c122c);
+      background-color: var(--very-Dark-Blue, #0c122c);
+      width: 459px;
+      position: relative;
+
+      .bar {
+        background: linear-gradient(90deg, #FFA399 0%, #FF4D97 100%);
+        border-radius: 99999px;
+        height: 14px;
+        width: 70%;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          right: 2px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 10px;
+          height: 10px;
+          border-radius: 100%;
+          background-color: var(--pale-Blue, hsl(243, 100%, 93%));
+        }
+      }
+
+      .speech-up {
+        position: absolute;
+        right: 0;
+        bottom: calc(100% + 2.9375rem);
+        display: flex;
+        align-items: center;
+        gap: .5125rem;
+        padding: 0.8125rem 1.5rem;
+        border-radius: .625rem .625rem 0 .625rem;
+        background-color: #ffffff;
+
+        h2 {
+          font-weight: 700;
+          font-size: 2.5rem;
+          color: var(--very-Dark-Blue, #0c122c);
+          margin: 0;
+        }
+
+        small {
+          font-weight: 700;
+          font-size: 0.8125rem;
+          letter-spacing: 0.03em;
+          text-transform: uppercase;
+          color: var(--grayish-Blue, hsl(229, 7%, 55%));
+          margin: 0;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          right: 0;
+          bottom: -1.375rem;
+          width: 0px;
+          height: 0px;
+          border-style: solid;
+          border-width: 0 1.375rem 1.375rem 0;
+          border-color: transparent #ffffff transparent transparent;
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      p {
+        font-weight: 700;
+        letter-spacing: -0.04em;
+        color: var(--pale-Blue, hsl(243, 100%, 93%));
+      }
+    }
+  }
+}
+
+.attribution {
+  color: var(--pale-Blue, hsl(243, 100%, 93%));
+}
+
+/* mobile */
+
+@media (max-width: 768px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    max-width: 326px;
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 3rem;
+
+    section {
+      width: 100%;
+    }
+
+    .section-1 {
+      padding-right: 6.75rem;
+    }
+
+    .section-2 .container-bar {
+      width: 260px;
+
+      .speech-up {
+        position: absolute;
+        right: 50%;
+        bottom: -7.8125rem;
+        border-radius: .625rem;
+        transform: translateX(50%);
+        width: 11.875rem;
+        padding: 5px 25px;
+
+        display: flex;
+        gap: 4rem;
+
+        small {
+          width: 160%;
+        }
+
+        &::before {
+          content: "";
+          display: none;
+        }
+      }
+    }
+  }
+
+
+}

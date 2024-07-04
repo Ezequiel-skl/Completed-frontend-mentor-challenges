@@ -1,0 +1,148 @@
+---
+const { challenge, ...props } = Astro.props
+
+type Languages = "HTML" | "CSS" | "JS" | "API"
+
+function difficultyColor(difficulty: string) {
+	if (difficulty === "Newbie") return "cyan"
+	if (difficulty === "Junior") return "lime"
+	if (difficulty === "Intermediário") return "pink"
+	if (difficulty === "Advanced") return "purple"
+}
+
+function languageColor(language: string) {
+	if (language === "HTML") return "text-cyan"
+	if (language === "CSS") return "text-purple"
+	if (language === "JS") return "text-pink"
+	if (language === "API") return "text-lime"
+}
+
+---
+
+<li class="card-challenge">
+	<header class="h-[17.5rem] overflow-hidden border-b border-main bg-main">
+		<a href={challenge.slug} class="effects-image w-full">
+			<img
+				src={`./challenges/${challenge.slug}/screenshot.webp`}
+				alt={`${challenge.title} screenshot`}
+				class="screenshot"
+				{...props}
+			/>
+			{
+				challenge.isNew && (
+					<div class="new flex items-center gap-2">
+						<img src="/svgs/icons/star.svg" alt="Star new challenge" class="w-3 h-3"/>
+						<span>New</span>
+					</div>
+				)
+			}
+		</a>
+	</header>
+	<div class="px-6 py-8">
+		<h2 class="mb-5 text-[1.5rem]">
+			<a href={challenge.slug} class="cursor-pointer font-semibold hover:underline"
+				>{challenge.title}</a
+			>
+		</h2>
+		<div class="flex items-center justify-between *:uppercase">
+			<ul class="flex items-center gap-4 pb-4 *:m-0 *:text-[1.125rem] *:font-bold">
+				{
+					challenge.languages?.map((language: Languages) => (
+						<li class={`flex items-center gap-2 ${languageColor(language)}`}>{language}</li>
+					))
+				}
+			</ul>
+			<div class={`color-${difficultyColor(challenge.difficulty[0])} container-difficulty`}>
+				<span class="text-white">{challenge.difficulty[1]}</span>
+				<p class={`bg-transparent text-${difficultyColor(challenge.difficulty[0])}`}>{challenge.difficulty[0]}</p>
+			</div>
+		</div>
+		<footer>
+			<p class="m-0 text-pretty font-heebo font-normal text-lightgray" style="line-height: 1.5;">
+				{challenge.description}
+			</p>
+		</footer>
+	</div>
+</li>
+
+<style>
+	.color-cyan {
+		border-color: var(--cyan);
+
+		span {
+			background-color: var(--cyan);
+		}
+	}
+
+	.color-lime {
+		border-color: var(--lime);
+
+		span {
+			background-color: var(--lime);
+		}
+	}
+
+	.color-pink {
+		border-color: var(--pink);
+
+		span {
+			background-color: var(--pink);
+		}
+	}
+
+	.color-purple {
+		border-color: var(--purple);
+
+		span {
+			background-color: var(--purple);
+		}
+	}
+
+	.color-gray {
+		border-color: lightgray;
+
+		span {
+			background-color: lightgray;
+		}
+	}
+
+	.card-challenge {
+		@apply h-full w-full overflow-hidden rounded-[.625rem] border border-main bg-white;
+	}
+
+	.new {
+		@apply bg-red absolute right-3 top-3 z-50 rounded-[999px] px-4 py-[.25rem] text-center text-white;
+		@apply text-[.9812rem] font-bold uppercase leading-[1.1875rem];
+	}
+
+	.effects-image {
+		position: relative;
+		overflow: hidden;
+
+		.screenshot {
+			width: 100%;
+			height: auto;
+			transition: transform 0.3s ease;
+			aspect-ratio: 4 / 3;
+
+			&:hover {
+				transform: scale(1.3);
+			}
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+			width: 100%;
+			height: 6rem;
+			z-index: 50;
+			top: 0;
+			pointer-events: none;
+		}
+	}
+
+	.container-difficulty {
+		@apply mb-4 flex items-center overflow-hidden rounded border *:m-0 *:px-[.75rem] *:text-[0.875rem] *:font-bold;
+	}
+</style>

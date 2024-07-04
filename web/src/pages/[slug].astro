@@ -1,0 +1,45 @@
+---
+import { CHALLENGES } from "@/conts/CHALLENGES"
+import Layout from "@/layouts/Layout.astro"
+
+export async function getStaticPaths() {
+	return CHALLENGES.map((challenge) => ({
+		params: { slug: challenge.slug },
+	}))
+}
+
+const { slug } = Astro.params
+const challenge = CHALLENGES.find((c) => c.slug === slug)
+
+if (!challenge) {
+	throw new Error(`Challenge not found: ${slug}`)
+}
+---
+
+<Layout
+	title={challenge.title}
+	description={challenge.description}
+	img={`/challenges/${challenge.slug}/screenshot.webp`}
+>
+	<iframe
+		src={`/challenges/${challenge.slug}/index.html`}
+		title="Fylo data storage component"
+		width="100%"
+		height="100%"
+		class="h-dvh w-screen"
+	>
+	</iframe>
+</Layout>
+
+<script>
+	window.addEventListener("message", (event) => {
+		if (event.origin !== window.location.origin) return
+
+		const { action, payload } = event.data
+
+		if (action === "updateURL") {
+			const newURL = payload
+			history.pushState({}, "", newURL)
+		}
+	})
+</script>

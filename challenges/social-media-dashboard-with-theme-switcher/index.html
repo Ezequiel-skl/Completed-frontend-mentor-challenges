@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Social Media Dashboard with Theme Switcher</title>
+    <link rel="stylesheet" href="./style/main.css" />
+    <style>
+      @font-face {
+        font-family: "Inter";
+        src: url("./assets/Inter-Regular.ttf");
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      @font-face {
+        font-family: "Inter";
+        src: url("./assets/Inter-Bold.ttf");
+        font-style: normal;
+        font-weight: 700;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        transition: color 0.2s ease-in-out;
+      }
+    </style>
+    <script type="module">
+      const $body = document.body;
+      const $bToggleTheme = document.querySelector(".toggle-switch");
+      const $circle = document.querySelector(".shitch-circle");
+      const $themeTypes = document.querySelector(".theme-types");
+
+      const textThemeTypes = ["Dark Mode", "Light Mode"];
+      let theTheme = true;
+
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        $body.classList.add("dark-theme");
+        theTheme = true;
+      } else {
+        $body.classList.add("light-theme");
+        theTheme = false;
+      }
+
+      $bToggleTheme.addEventListener("click", () => {
+        $body.classList.toggle("light-theme");
+        $body.classList.toggle("dark-theme");
+        $circle.classList.toggle("light-theme");
+
+        if (theTheme) {
+          $themeTypes.innerHTML = textThemeTypes[1];
+          $circle.style.left = "calc(100% - 18px)";
+          theTheme = false;
+        } else {
+          $themeTypes.innerHTML = textThemeTypes[0];
+          $circle.style.left = "0";
+          theTheme = true;
+        }
+      });
+    </script>
+  </head>
+  <body class="dark-theme">
+    <div class="container bg-pattern">
+      <main>
+        <header class="main-header">
+          <div class="title">
+            <h1>Social Media Dashboard</h1>
+            <p>Total Followers: <span>23,004</span></p>
+          </div>
+          <button class="toggle-switch" title="Toggle theme">
+            <p class="theme-types">Dark Mode</p>
+            <div class="bg-switch">
+              <div class="shitch-circle"></div>
+            </div>
+          </button>
+        </header>
+        <ul class="total-followers">
+          <li>
+            <button class="border-t-facebook">
+              <header>
+                <img src="./assets/icon-facebook.svg" alt="Facebook logo" />
+                <small>@nathanf</small>
+              </header>
+              <div>
+                <h2>1987</h2>
+                <p>Followers</p>
+              </div>
+              <footer>
+                <img src="assets/icon-up.svg" alt="Icon up" />
+                <p class="green-number none-color-phone">
+                  <span>12 </span>Today
+                </p>
+              </footer>
+            </button>
+          </li>
+          <li>
+            <button class="border-t-twitter">
+              <header>
+                <img src="./assets/icon-twitter.svg" alt="Twitter logo" />
+                <small>@nathanf</small>
+              </header>
+              <div>
+                <h2>1044</h2>
+                <p>Followers</p>
+              </div>
+              <footer>
+                <img src="assets/icon-up.svg" alt="Icon up" />
+                <p class="green-number"><span>99 </span>Today</p>
+              </footer>
+            </button>
+          </li>
+          <li>
+            <button class="border-t-instagram">
+              <header>
+                <img src="./assets/icon-instagram.svg" alt="Instagram logo" />
+                <small>@realnathanf</small>
+              </header>
+              <div>
+                <h2>11K</h2>
+                <p>Followers</p>
+              </div>
+              <footer>
+                <img src="assets/icon-up.svg" alt="Icon up" />
+                <p class="green-number"><span>1099 </span>Today</p>
+              </footer>
+            </button>
+          </li>
+          <li>
+            <button class="border-t-youtube">
+              <header>
+                <img src="./assets/icon-youtube.svg" alt="Youtube logo" />
+                <small>Nathan F.</small>
+              </header>
+              <div>
+                <h2>8239</h2>
+                <p>Subscribers</p>
+              </div>
+              <footer class="down-subscribers">
+                <img src="assets/icon-down.svg" alt="Icon up" />
+                <p class="red-number"><span>144 </span>Today</p>
+              </footer>
+            </button>
+          </li>
+        </ul>
+        <h2 class="overview-title">Overview - Today</h2>
+        <ul class="overview-today">
+          <li>
+            <button>
+              <header>
+                <h2>Page Views</h2>
+                <img src="./assets/icon-facebook.svg" alt="Facebook logo" />
+              </header>
+              <footer>
+                <h3>87</h3>
+                <div class="green-number">
+                  <img src="./assets/icon-up.svg" alt="Icon up" />
+                  <span>3%</span>
+                </div>
+              </footer>
+            </button>
+          </li>
+          <li>
+            <button>
+              <header>
+                <h2>Likes</h2>
+                <img src="./assets/icon-facebook.svg" alt="Facebook logo" />
+              </header>
+              <footer>
+                <h3>52</h3>
+                <div class="red-number">
+                  <img src="./assets/icon-down.svg" alt="Icon up" />
+                  <span>2%</span>
+                </div>
+              </footer>
+            </button>
+          </li>
+          <li>
+            <button>
+              <header>
+                <h2>Likes</h2>
+                <img src="./assets/icon-instagram.svg" alt="Instagram logo" />
+              </header>
+              <footer>
+                <h3>5462</h3>
+                <div class="green-number">
+                  <img src="./assets/icon-up.svg" alt="Icon up" />
+                  <span>2257%</span>
+                </div>
+              </footer>
+            </button>
+          </li>
+          <li>
+            <button>
+              <header>
+                <h2>Profile Views</h2>
+                <img src="./assets/icon-instagram.svg" alt="Instagram logo" />
+              </header>
+              <footer>
+                <h3>52k</h3>
+                <div class="green-number">
+                  <img src="./assets/icon-up.svg" alt="Icon up" />
+                  <span>1375%</span>
+                </div>
+              </footer>
+            </button>
+          </li>
+          <li>
+            <button>
+              <header>
+                <h2>Retweets</h2>
+                <img src="./assets/icon-twitter.svg" alt="Twitter logo" />
+              </header>
+              <footer>
+                <h3>117</h3>
+                <div class="green-number">
+                  <img src="./assets/icon-up.svg" alt="Icon up" />
+                  <span>303%</span>
+                </div>
+              </footer>
+            </button>
+          </li>
+          <li>
+            <button>
+              <header>
+                <h2>Likes</h2>
+                <img src="./assets/icon-twitter.svg" alt="Twitter logo" />
+              </header>
+              <footer>
+                <h3>507</h3>
+                <div class="green-number">
+                  <img src="./assets/icon-up.svg" alt="Icon up" />
+                  <span>553%</span>
+                </div>
+              </footer>
+            </button>
+          </li>
+          <li>
+            <button>
+              <header>
+                <h2>Likes</h2>
+                <img src="./assets/icon-youtube.svg" alt="Youtube logo" />
+              </header>
+              <footer>
+                <h3>107</h3>
+                <div class="red-number">
+                  <img src="./assets/icon-up.svg" alt="Icon up" />
+                  <span>10%</span>
+                </div>
+              </footer>
+            </button>
+          </li>
+          <li>
+            <button>
+              <header>
+                <h2>Total Views</h2>
+                <img src="./assets/icon-youtube.svg" alt="Youtube logo" />
+              </header>
+              <footer>
+                <h3>1407</h3>
+                <div class="red-number">
+                  <img src="./assets/icon-up.svg" alt="Icon up" />
+                  <span>12%</span>
+                </div>
+              </footer>
+            </button>
+          </li>
+        </ul>
+      </main>
+      <footer class="attribution">
+        Challenge by
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          rel="noopener noreferrer"
+          tabindex="0"
+        >
+          Frontend Mentor
+        </a>
+        . Coded by
+        <a
+          href="https://github.com/Ezequiel-skl"
+          target="_blank"
+          rel="noopener noreferrer"
+          tabindex="0"
+          >Eze-sk</a
+        >.
+      </footer>
+    </div>
+  </body>
+</html>

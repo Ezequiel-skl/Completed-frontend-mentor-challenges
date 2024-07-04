@@ -1,0 +1,25 @@
+---
+import Nav from "@/components/astro/header/Nav.astro"
+import SubHeader from "@/components/astro/header/SubHeader.astro"
+---
+
+<header>
+	<Nav id="nav" />
+	<SubHeader title="Challenges" id="sub-header">
+		
+	</SubHeader>
+</header>
+
+<script>
+	window.addEventListener("scroll", () => {
+		const nav = document.getElementById("nav")?.offsetHeight
+		const subHeader = document.getElementById("sub-header")
+		if (subHeader && nav) {
+			if (window.scrollY >= nav - 2) {
+				subHeader.classList.add("sticky-position")
+			} else {
+				subHeader.classList.remove("sticky-position")
+			}
+		}
+	})
+</script>

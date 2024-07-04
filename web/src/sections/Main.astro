@@ -1,0 +1,57 @@
+---
+import ChallengeCard from "@/components/astro/main/ChallengeCard.astro"
+import { CHALLENGES } from "@/conts/CHALLENGES"
+import type { Challenge } from "@/types/challenge"
+
+const newChallengeIndex = CHALLENGES.findIndex((challenge) => challenge.isNew)
+let reorderedChallenges = [...CHALLENGES]
+
+if (newChallengeIndex !== -1) {
+	const [newChallenge] = reorderedChallenges.splice(newChallengeIndex, 1)
+	reorderedChallenges = [newChallenge, ...reorderedChallenges]
+}
+---
+
+<main class="my-[50px] sm:container md:mx-auto">
+	<ul>
+		{
+			reorderedChallenges.map((challenge: Challenge) => (
+				<ChallengeCard challenge={challenge} class="loading" />
+			))
+		}
+	</ul>
+</main>
+
+<style>
+	ul {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(383px, 1fr));
+		gap: 1.625rem;
+		row-gap: 1.5625rem;
+		width: 100%;
+	}
+</style>
+
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+		const lazyImages = document.querySelectorAll(".loading")
+
+		const imageObserver = new IntersectionObserver((entries, observer) => {
+			entries.forEach((entry: IntersectionObserverEntry) => {
+				if (entry.isIntersecting) {
+					const img = entry.target as HTMLImageElement
+					const card = img.closest(".card") as HTMLElement
+					if (card) {
+						img.src = card.dataset.src!
+					}
+					img.loading = "lazy"
+					observer.unobserve(img)
+				}
+			})
+		})
+
+		lazyImages.forEach((img) => {
+			imageObserver.observe(img as Element)
+		})
+	})
+</script>

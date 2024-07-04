@@ -1,0 +1,19 @@
+{
+  "slug": "faq-accordion",
+  "title": "FAQ Accordion",
+  "description": "In this challenge, you'll build an FAQ accordion. This is an extremely common front-end pattern, so it's an excellent opportunity to get some practice in!",
+  "difficulty": [
+    "Newbie",
+    1
+  ],
+  "languages": [
+    "HTML",
+    "CSS",
+    "JS"
+  ],
+  "tags": [
+    "HTML&CSS",
+    "JS",
+    "Newbie"
+  ]
+}

@@ -1,0 +1,15 @@
+:root {
+  /* Colors */
+
+  /* # Neutral */
+
+  --pale-Blue: hsl(243, 100%, 93%);
+  --grayish-Blue: hsl(229, 7%, 55%);
+  --dark-Blue: hsl(228, 56%, 26%);
+  --very-Dark-Blue: hsl(229, 57%, 11%);
+
+  /* Typography */
+
+  --font-size: 14px;
+  --font-family: "Raleway", sans-serif;
+}

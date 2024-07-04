@@ -1,0 +1,35 @@
+---
+import SEO from "@/components/astro/SEO.astro"
+import "@/styles/global.css"
+import "@fontsource-variable/heebo" // Supports weights 100-900
+import "@fontsource/barlow/500.css"
+import "@fontsource/barlow/600.css"
+import "@fontsource/barlow/700.css"
+import { ViewTransitions } from "astro:transitions"
+
+interface Props {
+	title: string
+	description: string
+	img?: string
+}
+
+const { title, description, img } = Astro.props as Props
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<SEO title={title} description={description} image={img} />
+		<ViewTransitions />
+	</head>
+	<body>
+		<slot />
+	</body><style is:global>
+		body {
+			font-family: "Barlow", sans-serif;
+			background-color: var(--bg-web);
+			color: var(--dark-gray);
+			position: relative;
+		}
+	</style>
+</html>

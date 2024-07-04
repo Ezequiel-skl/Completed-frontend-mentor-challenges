@@ -1,0 +1,62 @@
+.light-theme {
+  background-color: var(--white, #fff);
+
+  .bg-pattern::after {
+    background: var(--very-Pale-Blue-Top-BG-Pattern, #f5f7ff);
+  }
+
+  main {
+    color: var(--very-Dark-Blue-light, hsl(230, 17%, 14%));
+
+    .title {
+      border-color: var(--dark-Grayish-Blue, #63687e);
+
+      p {
+        color: var(--dark-Grayish-Blue, #63687e);
+      }
+    }
+
+    .toggle-switch {
+      p {
+        color: var(--dark-Grayish-Blue, #63687e);
+      }
+
+      .shitch-circle {
+        background-color: var(--very-Pale-Blue-Top-BG-Pattern, #f5f7ff);
+      }
+    }
+
+    li button {
+      color: var(--very-Dark-Blue-light, hsl(230, 17%, 14%));
+      background-color: var(--light-Grayish-Blue-Card-BG, hsl(227, 47%, 96%));
+
+      &:hover {
+        filter: brightness(0.95);
+      }
+    }
+
+    .total-followers {
+      small {
+        color: var(--dark-Grayish-Blue, #63687e);
+      }
+
+      div p {
+        color: var(--dark-Grayish-Blue, #63687e);
+      }
+    }
+
+    .overview-today {
+      header h2 {
+        color: var(--dark-Grayish-Blue, #63687e);
+      }
+    }
+  }
+
+  .border-t-instagram {
+    border: var(--white, #fff);
+  }
+
+  .attribution {
+    color: var(--very-Dark-Blue-light, hsl(230, 17%, 14%));
+  }
+}

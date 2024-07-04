@@ -1,0 +1,115 @@
+---
+const { ...props } = Astro.props
+---
+
+<nav
+	class="flex items-center justify-between pb-[1.25rem] pt-[1.0625rem] md:container md:mx-auto"
+	{...props}
+>
+	<a href="/" title="Home">
+		<img src="./svgs/logos/frontend-mentor.svg" />
+	</a>
+	<div class="relative">
+		<button class="flex items-center gap-3" id="nav-toggle">
+			<img
+				src="https://avatars.githubusercontent.com/u/165630456?v=4"
+				alt="avatar"
+				class="container-avatar"
+			/>
+			<svg width="14" height="8" fill="none" id="nav-toggle-icon"
+				><path d="M2 0s3 5 5 5 5-5 5-5h2L7 8 0 0h2Z" fill="#1C2022"></path></svg
+			>
+		</button>
+		<ul
+			class="absolute z-[999] rounded-md bg-white *:px-7 *:pb-5 *:pt-[1.125rem] *:text-[.9375rem] *:font-semibold *:uppercase"
+			id="nav-list"
+			hidden
+		>
+			<li>
+				<a href="/">
+					<img src="/svgs/icons/house.svg" alt="home" />
+					Home
+				</a>
+			</li>
+			<li>
+				<a href="https://github.com/Ezequiel-skl">
+					<img src="/svgs/logos/github.svg" alt="github" />
+					Github
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<style>
+	svg {
+		transition: transform 0.3s ease-in-out;
+	}
+
+	.rotate {
+		transform: rotate(180deg);
+	}
+
+	ul {
+		left: 0;
+		top: 3rem;
+		transform: translateX(-50%);
+		border: 1px solid var(--border-main);
+		width: 153px;
+
+		li {
+			border-bottom: 1px solid var(--border-main);
+
+			a {
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+			}
+
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+
+		img {
+			width: 26px;
+			height: 25px;
+		}
+	}
+
+	.container-avatar {
+		width: 2.5rem;
+		height: 2.5rem;
+		border-radius: 50%;
+		position: relative;
+		overflow: hidden;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			box-shadow: rgba(0, 0, 0, 0.2) -1px 1px 3px inset;
+		}
+	}
+</style>
+
+<script>
+	const navToggle = document.getElementById("nav-toggle") as HTMLButtonElement
+	const navList = document.getElementById("nav-list") as HTMLUListElement
+	const navToggleIcon = document.getElementById("nav-toggle-icon") as HTMLElement
+
+	navToggle.addEventListener("click", () => {
+		navList.hidden = !navList.hidden
+		navToggleIcon.classList.toggle("rotate")
+	})
+
+	window.addEventListener("click", (e) => {
+		if (navToggle.contains(e.target as Node) || navList.contains(e.target as Node)) return
+		navList.hidden = true
+		navToggleIcon.classList.remove("rotate")
+	})
+</script>

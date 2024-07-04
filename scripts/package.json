@@ -1,0 +1,25 @@
+{
+  "name": "scripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "pushChallenge": "node index.js",
+    "buildChallenge": "node buildChallenge.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.4.19",
+    "cheerio": "1.0.0-rc.12",
+    "cssnano": "^7.0.3",
+    "fs-extra": "^11.2.0",
+    "glob": "^10.4.2",
+    "html-minifier-terser": "^7.2.0",
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0",
+    "postcss-nested": "^6.0.1"
+  }
+}

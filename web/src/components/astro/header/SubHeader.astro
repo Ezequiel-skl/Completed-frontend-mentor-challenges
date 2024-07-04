@@ -1,0 +1,26 @@
+---
+const { title = "unknown title", ...props } = Astro.props
+---
+
+<section class="m-0 border-y border-main" id="sub-header" {...props}>
+	<div class="m-0 flex items-center justify-between md:container md:mx-auto">
+		<h1 class="border-x border-main px-[1.5625rem] py-[1.125rem]">{title}</h1>
+		<div class="*:border-x *:border-main *:px-[1.5625rem] *:py-[1.125rem]">
+			<slot />
+		</div>
+	</div>
+</section>
+
+<style>
+	h1 {
+		@apply text-base font-semibold uppercase tracking-[0.06em];
+	}
+
+	.sticky-position {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 100;
+		background-color: var(--bg-web);
+	}
+</style>

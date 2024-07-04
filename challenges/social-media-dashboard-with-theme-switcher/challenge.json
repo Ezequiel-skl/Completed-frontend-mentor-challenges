@@ -1,0 +1,19 @@
+{
+  "slug": "social-media-dashboard-with-theme-switcher",
+  "title": "Social media dashboard with theme switcher",
+  "description": "I created a panel that adjusts the layout based on the device's screen size. Users can see hover states and change the color theme according to their preference.",
+  "difficulty": [
+    "Junior",
+    2
+  ],
+  "languages": [
+    "HTML",
+    "CSS",
+    "JS"
+  ],
+  "tags": [
+    "HTML&CSS",
+    "JS",
+    "Junior"
+  ]
+}
