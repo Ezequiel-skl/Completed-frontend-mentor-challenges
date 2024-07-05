@@ -1,5 +1,22 @@
 import type { ManifestOptions } from "vite-plugin-pwa"
 
+export const seoConfig = {
+	baseUrl: "https://completed-frontend-mentor-challenges.vercel.app/", // Production URL
+	title: "Completed frontend mentor challenges",
+	description: "Completed frontend mentor challenges that improve real-life development skills",
+	type: "website",
+	siteName: "Mentor challenges",
+	image: {
+		url: "/og.jpg",
+		alt: "Completed frontend mentor challenges",
+		width: 705,
+		height: 606,
+	},
+	twitter: {
+		card: "summary_large_image",
+	},
+}
+
 export const manifest: Partial<ManifestOptions> = {
 	name: "Completed frontend mentor challenges",
 	short_name: "Mentor challenges",
