@@ -1,10 +1,11 @@
 import { defineConfig } from "astro/config"
 import tailwind from "@astrojs/tailwind"
 import react from "@astrojs/react"
-import { VitePWA } from "vite-plugin-pwa"
 import vercel from "@astrojs/vercel/serverless"
+import { VitePWA } from "vite-plugin-pwa"
 
-// https://astro.build/config
+import { manifest } from "./src/utils/seoConfig"
+
 export default defineConfig({
 	build: {
 		inlineStylesheets: "always",
