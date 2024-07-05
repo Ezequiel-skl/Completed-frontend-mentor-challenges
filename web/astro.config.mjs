@@ -4,7 +4,7 @@ import react from "@astrojs/react"
 import vercel from "@astrojs/vercel/serverless"
 import { VitePWA } from "vite-plugin-pwa"
 
-import { manifest } from "./src/utils/seoConfig"
+import { manifest, seoConfig } from "./src/utils/seoConfig"
 
 export default defineConfig({
 	build: {
@@ -19,6 +19,7 @@ export default defineConfig({
 	output: "server",
 	adapter: vercel(),
 	output: "server",
+	site: seoConfig.baseUrl,
 	vite: {
 		build: {
 			cssMinify: "lightningcss",
