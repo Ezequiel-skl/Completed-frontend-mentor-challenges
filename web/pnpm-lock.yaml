@@ -9,38 +9,38 @@ importers:
   .:
     dependencies:
       '@astrojs/react':
-        specifier: ^3.5.0
+        specifier: 3.5.0
         version: 3.5.0(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.3.1(lightningcss@1.25.1)(terser@5.31.1))
       '@astrojs/vercel':
-        specifier: ^7.7.2
+        specifier: 7.7.2
         version: 7.7.2(astro@4.10.2(lightningcss@1.25.1)(terser@5.31.1)(typescript@5.4.5))(react@18.3.1)
       '@fontsource-variable/heebo':
-        specifier: ^5.0.22
+        specifier: 5.0.22
         version: 5.0.22
       '@fontsource/barlow':
-        specifier: ^5.0.13
+        specifier: 5.0.13
         version: 5.0.13
       '@types/react':
-        specifier: ^18.3.3
+        specifier: 18.3.3
         version: 18.3.3
       '@types/react-dom':
-        specifier: ^18.3.0
+        specifier: 18.3.0
         version: 18.3.0
       astro:
-        specifier: ^4.10.2
+        specifier: 4.10.2
         version: 4.10.2(lightningcss@1.25.1)(terser@5.31.1)(typescript@5.4.5)
       react:
-        specifier: ^18.3.1
+        specifier: 18.3.1
         version: 18.3.1
       react-dom:
-        specifier: ^18.3.1
+        specifier: 18.3.1
         version: 18.3.1(react@18.3.1)
     devDependencies:
       '@astrojs/check':
-        specifier: ^0.7.0
+        specifier: 0.7.0
         version: 0.7.0(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.4.5)
       '@astrojs/tailwind':
-        specifier: ^5.1.0
+        specifier: 5.1.0
         version: 5.1.0(astro@4.10.2(lightningcss@1.25.1)(terser@5.31.1)(typescript@5.4.5))(tailwindcss@3.4.4)
       '@types/dom-view-transitions':
         specifier: 1.0.4
