@@ -7,7 +7,7 @@
 
 <img src="./screenshot.webp" alt="screenshot of the completed challenge" width="60%" style="border-radius: 10px;" >
 
-<a href="/" target="_blank" rel="noopener noreferrer" title="Live Demo" style="display: block; font-weight: bold; text-transform: uppercase; text-decoration: underline; font-size: 1.3rem; margin: 1rem; margin-left: 25%;">
+<a href="https://completed-frontend-mentor-challenges.vercel.app/testimonials-grid-section" target="_blank" rel="noopener noreferrer" title="Live Demo" style="display: block; font-weight: bold; text-transform: uppercase; text-decoration: underline; font-size: 1.3rem; margin: 1rem; margin-left: 25%;">
   Live Demo 
   <svg width="16" height="16" fill="currentColor">
   <path 

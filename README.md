@@ -23,7 +23,7 @@ folders and with links to both the code and live versions.
 Here is the web folder showing all completed challenges. You can access the code and see the live website.
 
 - [Web Code](https://github.com/Ezequiel-skl/Completed-frontend-mentor-challenges/tree/main/web)
-- [See Website](https://)
+- [See Website](https://completed-frontend-mentor-challenges.vercel.app/)
 
 ## 🛠 Scripts
 
@@ -64,10 +64,22 @@ You can run both scripts consecutively using the `pnpm pushChallenge command`.
   pnpm pushChallenge
 ```
 
-### 📦 Requirements
+## 🛠️ Stack
 
-- Node.js 16.x
-- pnpm
+**Challenge Folders**
+
+- HTML, CSS & JavaScript
+
+**Web Folder**
+
+- [**Astro**](https://astro.build/) - The web framework for content-driven websites.
+- [**TypeScript**](https://www.typescriptlang.org/) - A typed superset of JavaScript that compiles to plain JavaScript.
+- [**Tailwind CSS**](https://tailwindcss.com/) - A utility-first CSS framework for rapidly building custom designs.
+
+**Scripts Folder**
+
+- [**Node.js**](https://nodejs.org/en/) - A JavaScript runtime built on Chrome's V8 JavaScript engine.
+- [**pnpm**](https://pnpm.io/) - A fast, disk space efficient package manager.
 
 ## 🏆 Credits
 
