@@ -20,6 +20,9 @@ export default defineConfig({
 	adapter: vercel(),
 	output: "server",
 	site: seoConfig.baseUrl,
+	adapter: vercel({
+		webAnalytics: { enabled: true }
+	}),
 	vite: {
 		build: {
 			cssMinify: "lightningcss",
